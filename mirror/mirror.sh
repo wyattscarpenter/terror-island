@@ -24,9 +24,9 @@ findreplace () {
 #Step 3: Handle the files we need to grab especially because the websites are down:
 if [ "${1:-0}" -le 3 ] ; then
   findreplace 'http://waxintellectual.com/images/buttons/affiliation/factions/' 'http\:\/\/waxintellectual\.com\/images\/buttons\/affiliation\/factions\/' '..\/..\/waxintellectual\.com\/images\/buttons\/affiliation\/factions\/'
-  findreplace 'http://www.merehappenings.com/images/MH_title.gif' 'http\:\/\/www\.merehappenings.com\/images\/MH_title.gif' '..\/..\/merehappenings\.com\/images\/MH_title.gif'
-  findreplace 'http://www.webcomicbattle.com/images/comicbutton.gif' 'http\:\/\/www.webcomicbattle.com\/images\/comicbutton\.gif' '..\/..\/www.webcomicbattle.com\/images\/comicbutton\.gif'
-  findreplace 'http://www.photowebcomics.com/button.php?u=Factitious' 'http\:\/\/www\.photowebcomics\.com\/button\.php\?u\=Factitious' '..\/..\www.photowebcomics.com\/images\/vote.jpg'
+  findreplace 'http://www.merehappenings.com/images/MH_title.gif' 'http\:\/\/www\.merehappenings\.com\/images\/MH_title\.gif' '..\/..\/www.merehappenings\.com\/images\/MH_title.gif'
+  findreplace 'http://www.webcomicbattle.com/images/comicbutton.gif' 'http\:\/\/www\.webcomicbattle\.com\/images\/comicbutton\.gif' '..\/..\/www.webcomicbattle.com\/images\/comicbutton.gif'
+  findreplace 'http://www.photowebcomics.com/button.php?u=Factitious' 'http\:\/\/www\.photowebcomics\.com\/button\.php?u=Factitious' '..\/..\/www.photowebcomics.com\/images\/vote.jpg'
 fi
 #the special directories are:
 # waxintellectual.com/
