@@ -10,8 +10,6 @@ if [ "${1:-0}" -le 2 ] ; then
   wget -p --convert-links --span-hosts `find www.terrorisland.net/` #the link-rewriting is wrong unless we use wget on everything at once, therefore we do it this way/ That is, if we did it a different way, then 
 fi
 
-exit
-
 findreplace () {
   # $1: string to grep for. Minimally-quoted, just for shell.
   # $2: string to sed interpret. Maximally-quoted, as it must be interpreted as a regex (and also as a shell variable twice? Does that happen? If so, can I get around it with ${x@Q}?)
