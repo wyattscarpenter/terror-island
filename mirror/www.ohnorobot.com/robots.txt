@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /verify.pl
+<%flags>
+inherit => undef
+</%flags>
