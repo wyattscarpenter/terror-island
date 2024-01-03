@@ -42,7 +42,7 @@ typeset_book () {
   # $2: additional ebook-convert options to pass in at the end to facilitate your chosen format.
   echo "Making ebook with following extension: ${1:-}"
   ebook-convert $main_site_dir/0-index.html books/terror_island_unofficial-wyattscarpenter-2024"${1:-}" \
-    --no-chapters-in-toc --max-toc-links 0 --breadth-first --max-levels 1 \
+    --no-chapters-in-toc --max-toc-links 0 --breadth-first --max-levels 1 --toc-threshold 1 \
     --search-replace replacements.txt \
     --language en --cover cover.pdn.png \
     --authors "Ben Heaton&Lewis Powell" --book-producer "Wyatt S Carpenter" --pubdate 2024 --title "Terror Island" --rating 5 \
