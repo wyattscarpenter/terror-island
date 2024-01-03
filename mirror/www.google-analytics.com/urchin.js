@@ -89,7 +89,7 @@ var _uRno=new Array();
 
 //-- **** Don't modify below this point ***
 var _uff,_udh,_udt,_ubl=0,_udo="",_uu,_ufns=0,_uns=0,_ur="-",_ufno=0,_ust=0,_ubd=document,_udl=_ubd.location,_udlh="",_uwv="1.4";
-var _ugifpath2="../../www.google-analytics.com/__utm.gif";
+var _ugifpath2="http://www.google-analytics.com/__utm.gif";
 if (_udl.hash) _udlh=_udl.href.substring(_udl.href.indexOf('#'));
 if (_udl.protocol=="https:") _ugifpath2="https://ssl.google-analytics.com/__utm.gif";
 if (!_utcp || _utcp=="") _utcp="/";
