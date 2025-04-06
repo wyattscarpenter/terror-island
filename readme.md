@@ -7,4 +7,12 @@ This project, as a whole, is NOT entirely free / libre!!! The webcomic belongs t
 
 In the mirror directory there are various things that had to be taken from archived copies on web.archive.org, as the original website holding them has gone down. (See mirror.sh for more details.) I was able to find most things this way, but 218.html references a "Batman-related discover\[y]" at http://www.pizdaus.com/pics/4zKsFnpp34zH.jpg that is lost to time.
 
+# Some of the TODOs I have to iron out:
+
 The project is pretty much perfect, except that a couple pdf links just go to... nothing. And therefore are bad table of contents members. "Check it" is the review, though...
+
+Why is there a `cast*` page now? Did I make a scripting error.
+
+I should probably archive and include the fancomic that is so lovingly linked to.
+
+Should I make a process here like I've done for other projects, that shows me a diff of all the output each change, to check easily for bad refactors?
