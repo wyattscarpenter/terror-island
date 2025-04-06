@@ -16,7 +16,24 @@ http://www.waxintellectual.com/main.css
 main.css
 http.?://terrorisland.net/images/buttons/bookmark.png
 ../images/buttons/bookmark.png
+<a href="http://www.terrorisland.net/
+<a href="
+<a href="http://terrorisland.net/strips/
+<a href="
 <br \/><\/span>[\s\S]*?<\/div>
 </span></div>
 title="([^"]*)"\s*alt="it's hard to appreciate this comic strip without seeing it"[\s\S]*?\/>
 /><center><i>\1</i></center>
+http://www.waxintellectual.com/cast.html
+cast.html
+http://www.waxintellecutal.com/cast.html
+cast.html
+border=none
+border: none
+(images/misc/cast.*?.jpg)
+\1.html
+1280x854b.jpg
+1280x854 (alt).jpg
+etcetera/buzzsaw_review.pdf
+3-buzzsaw_review.pdf.html
+

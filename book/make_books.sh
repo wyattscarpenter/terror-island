@@ -1,5 +1,6 @@
 #!/bin/bash
-set -euo pipefail #bash strict mode (we deliberately keep the default IFS, because we use it later to pass some command line arguments around.)
+set -euo pipefail #bash strict mode
+IFS=$'\t\n'
 
 if [ "$#" -ge 2 ] || [ "$#" -eq 1 ] && ! [ "$#" -a "$1" = "-inplace" -o "$1" = "--inplace" ] ; then
   echo "Usage: $0 [[-]-inplace]. Provided input: $0 $@"
@@ -16,6 +17,18 @@ main_site_dir='site/www.terrorisland.net'
 
 ebook-convert --version || sudo apt install -y calibre #here I try to install ebook-convert if you don't have it. I only really try for ubuntu, however.
 
+image_to_page () {
+  a=${1#./cast}
+  b=${a%.jpg}
+  c=${b/%b/%20(alt)}
+  echo "<html>
+  <head></head>
+  <body>
+    <h1>$c</h1>
+    <img src=\"$1\">
+  </body></html>" >"$c.html"
+}
+
 echo 'Making Foreword into an "open ebook" with ebook-convert and then stealing the file...'
   ebook-convert foreword.md tmp-foreword --title "Foreword" >/dev/null
   cp tmp-foreword/index.html $main_site_dir/2-foreword.md.html
@@ -30,11 +43,20 @@ rm -r -f tmp-review/
 cp title_page.html $main_site_dir/1-title_page.html
 cp cover_back.html $main_site_dir/Z-cover_back.html
 cp cover_back.pdn.png $main_site_dir/
-mv $main_site_dir/strips/index.html $main_site_dir/strips/000-index.html # This is the strip index, the incomplete "Year One Archives"; not to be confused with the website index, which is just the home page.
+[ -e $main_site_dir/strips/index.html ] && mv $main_site_dir/strips/index.html $main_site_dir/strips/000-index.html # This is the strip index, the incomplete "Year One Archives"; not to be confused with the website index, which is just the home page.
 rm -f $main_site_dir/index.html # This deliberately deletes the old website index.html, as it's just the final strip, anyway. (And therefore the resulting book from it is jus a useless first page, frontmatter, and random strips you can reach from this first starting point.
 
+cd $main_site_dir/images/misc
+  for i in cast*.jpg
+    do echo "BLAHHHHHH $i"; image_to_page "$i" ; done
+cd -
+
 cd $main_site_dir/
-  find -name '*.html' -exec sh -c 'echo "<a href=\"{}\">`basename -s .html {}`</a>" ' \; >0-index.html
+  shopt -s globstar
+  echo >0-index.html
+  for i in **/*.html ; do #will probably move this back to a for loop over the find output
+    echo "<a href=\"$i\">`basename -s .html \"$i\"`</a>" >>0-index.html
+  done
 cd -
 
 typeset_book () {
@@ -50,7 +72,9 @@ typeset_book () {
     ${2:-} #&>/dev/null #you can use this to quiet the diagnostic messages if you like.
 }
 
-typeset_book ".pdf" '--custom-size 5.245x8.5 --pdf-page-margin-bottom 0 --pdf-page-margin-left 0 --pdf-page-margin-right 0 --pdf-page-margin-top 0 --margin-bottom 0 --margin-top 0 --margin-left 0 --margin-right 0' & # pdf options #interestingly, --pdf-footer-template <center>_PAGENUM_</center> gets an out-of-range error (calibre 6.11) #--paper-size a5 is closest to US trade paperback (6x9in) of the default options, but none are close enough, nor close enough to what we want...
+#typeset_book ".pdf" '--custom-size 5.245x8.5 --pdf-page-margin-bottom 0 --pdf-page-margin-left 0 --pdf-page-margin-right 0 --pdf-page-margin-top 0 --margin-bottom 0 --margin-top 0 --margin-left 0 --margin-right 0' & # pdf options #interestingly, --pdf-footer-template <center>_PAGENUM_</center> gets an out-of-range error (calibre 6.11) #--paper-size a5 is closest to US trade paperback (6x9in) of the default options, but none are close enough, nor close enough to what we want...
+typeset_book ".pdf" '--custom-size	5.245x8.5	--pdf-page-margin-bottom	0	--pdf-page-margin-left	0	--pdf-page-margin-right	0	--pdf-page-margin-top	0	--margin-bottom	0	--margin-top	0	--margin-left	0	--margin-right	0' & #because I had to reconfigure IFS above, the last string has tabs instead of spaces # pdf options #interestingly, --pdf-footer-template <center>_PAGENUM_</center> gets an out-of-range error (calibre 6.11) #--paper-size a5 is closest to US trade paperback (6x9in) of the default options, but none are close enough, nor close enough to what we want...
+
 rm -r -f books/terror_island_unofficial-wyattscarpenter-2024  #make sure we have a clean slate for this
 typeset_book & # This will create the OEB format
 wait
