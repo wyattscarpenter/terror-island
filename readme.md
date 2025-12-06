@@ -9,10 +9,19 @@ In the mirror directory there are various things that had to be taken from archi
 
 # Some of the TODOs I have to iron out:
 
+Should I make a process here like I've done for other projects, that shows me a diff of all the output each change, to check easily for bad refactors?
+
 The project is pretty much perfect, except that a couple pdf links just go to... nothing. And therefore are bad table of contents members. "Check it" is the review, though...
 
 Why is there a `cast*` page now? Did I make a scripting error.
 
-I should probably archive and include the fancomic that is so lovingly linked to.
+Wait does Z cover back get placed wrong now?!
 
-Should I make a process here like I've done for other projects, that shows me a diff of all the output each change, to check easily for bad refactors?
+I should probably archive and include the fancomic that is so lovingly linked to.
+https://hawaiianshirts.livejournal.com/46599.html, I think? Which is also in Fan Art & Related Items, but only an excerpt of it.
+
+Strip #90 has a quote smarted after a hyperlink, producing "Here‘s". I may have to report this to calibre itself.
+
+The links in Strip #112 to the old comics aren't mapped to the book, possibly because they are non-www versions of the url.
+
+Should I include the transcripts as an appendix? Hmm. Probably. Or perhaps directly on each page, especially because I'm thinking it's more inevitable that each comic will take up like two pages on average (mode).
