@@ -25,3 +25,7 @@ Strip #90 has a quote smarted after a hyperlink, producing "Here‘s". I may hav
 The links in Strip #112 to the old comics aren't mapped to the book, possibly because they are non-www versions of the url.
 
 Should I include the transcripts as an appendix? Hmm. Probably. Or perhaps directly on each page, especially because I'm thinking it's more inevitable that each comic will take up like two pages on average (mode).
+
+Ben's notes for Strip #233 seemingly mis-identify Rnbrdu as Lord Terror, which is interesting. Strip #194, the concept art, establishes those respective names and its title text is "If you can figure out some way to count this as canon, go for it.", curious. Rnbrdu is never named (nor seen?) again, but Lord Terror does appear subsequently in the comic several more times with the name and look from #194. I don't think I currently have any way to note this in the text of the book, except maybe as a fun fact in the compiler's foreword.
+
+The ohnorobot transcripts contain several typos, but I think I will just leave those in there, especially because I can't see any way to correct them on ohnorobot itself. (Back when ohnorobot was more like a real website there presumably was.) I should lampshade this like "including their original typos!" although come to think of it their original typos may have been different, for some understanding of "original".
