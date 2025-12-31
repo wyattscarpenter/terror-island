@@ -1,4 +1,4 @@
-# terrorisland
+# terror island (wyattscarpenter git repo)
 Please enjoy this local mirror and book-version of the webcomic _Terror Island_ of terrorisland.net
 
 This project contains (or will contain), these folders:
