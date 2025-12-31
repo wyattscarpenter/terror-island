@@ -16,6 +16,10 @@ In the mirror directory there are various things that had to be taken from archi
 
 # Some of the TODOs I have to iron out:
 
+(I may have written TODO inline in a couple places; grep for that)
+
+sus link behavior in #48 of terror island
+
 Should I make a process here like I've done for other projects, that shows me a diff of all the output each change, to check easily for bad refactors?
 
 The project is pretty much perfect, except that a couple pdf links just go to... nothing. And therefore are bad table of contents members. "Check it" is the review, though...
